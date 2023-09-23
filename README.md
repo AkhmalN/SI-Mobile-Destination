@@ -1,6 +1,6 @@
-# Mobile Apps Destination Using Djikstra Algorithm
-# Maps : react-native-maps
-# Icon : Fontawesome
+ # Mobile Apps Destination Using Djikstra Algorithm
+ Maps : react-native-maps
+ Icon : Fontawesome
 
 
 built for my final college assignment
