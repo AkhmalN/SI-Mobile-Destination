@@ -1,3 +1,11 @@
+# Mobile Apps Destination Using Djikstra Algorithm
+# Maps : react-native-maps
+# Icon : Fontawesome
+
+
+built for my final college assignment
+Akhmal Novanda A / Informatics 
+
 # Expo Router Example
 
 Use [`expo-router`](https://expo.github.io/router) to build native navigation using files in the `app/` directory.
