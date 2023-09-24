@@ -30,7 +30,8 @@ export default function Index() {
         borderTopLeftRadius : 20,
         borderTopRightRadius : 20,
         marginLeft : 20,
-        marginRight : 20
+        marginRight : 20,
+        backgroundColor : "#FFFBF5"
       }
     }}
     >
