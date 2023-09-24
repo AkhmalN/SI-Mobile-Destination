@@ -8,7 +8,7 @@ import Daftar from '../screen/Daftar';
 import Pencarian from '../screen/Pencarian';
 import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome';
 import * as Animatable from 'react-native-animatable'
-import { faHouse, faMagnifyingGlass, faMapLocation, faRectangleList } from '@fortawesome/free-solid-svg-icons';
+import { faHouseChimneyWindow, faMagnifyingGlass, faMapLocation, faRectangleList } from '@fortawesome/free-solid-svg-icons';
 const Tab = createBottomTabNavigator();
 
 export default function Index() {
@@ -22,55 +22,67 @@ export default function Index() {
   }
 
   return (
-    <Tab.Navigator>
+    <Tab.Navigator 
+    screenOptions={{
+
+      tabBarStyle : {
+        height : 55,
+        paddingBottom : 7,
+        backgroundColor : "#FFFFFF",
+        borderTopLeftRadius : 20,
+        borderTopRightRadius : 20,
+        shadowColor : "#61677A",
+      }
+    }}
+    >
       <Tab.Screen name="Beranda" component={Beranda} options={{
         tabBarLabelStyle : {fontSize : 12, width : 100, fontFamily : "Mooli-Regular"},
         tabBarIcon : ({focused}) =>(
             <Animatable.View animation={focused ? 'bounce' : null}>
               <FontAwesomeIcon
-                icon={faHouse}
-                size={focused ? 35 : 25}
-                color={focused ? '#419197' : '#12486B'}
-                style={focused ? {marginBottom : 20,} : {marginBottom : 0}}
+                icon={faHouseChimneyWindow}
+                size={focused ? 29 : 25}
+                color={focused ? '#2666CF' : '#1B262C'}
+                style={focused ? {marginBottom : 7} : {marginBottom : 0}}
               />
             </Animatable.View>        
                   )
             }}/>
       <Tab.Screen name="Lokasi" component={Lokasi}options={{
-        tabBarLabelStyle : {fontSize : 12, width : 100},
+        tabBarLabelStyle : {fontSize : 12, width : 100 , fontFamily : "Mooli-Regular"},
         tabBarIcon : ({focused}) =>(
           <Animatable.View animation={focused ? 'bounce' : null}>
           <FontAwesomeIcon
             icon={faMapLocation}
-            size={focused ? 35 : 25}
-            color={focused ? '#419197' : '#12486B'}
-            style={focused ? {marginBottom : 20,} : {marginBottom : 0}}
+            size={focused ? 29 : 25}
+            color={focused ? '#2666CF' : '#1B262C'}
+            style={focused ? {marginBottom : 7,} : {marginBottom : 0}}
           />
         </Animatable.View>        
             )
       }}  />
       <Tab.Screen name="Pencarian" component={Pencarian} options={{
-        tabBarLabelStyle : {fontSize : 12, width : 100},
+        tabBarLabelStyle : {fontSize : 12, width : 100 , fontFamily : "Mooli-Regular"},
         tabBarIcon : ({focused}) =>(
           <Animatable.View animation={focused ? 'bounce' : null}>
           <FontAwesomeIcon
             icon={faMagnifyingGlass}
-            size={focused ? 35 : 25}
-            color={focused ? '#419197' : '#12486B'}
-            style={focused ? {marginBottom : 20,} : {marginBottom : 0}}
+            size={focused ? 29 : 25}
+            color={focused ? '#2666CF' : '#1B262C'}
+            style={focused ? {marginBottom : 7,} : {marginBottom : 0}}
           />
         </Animatable.View>        
             )
       }}/>
       <Tab.Screen name="Daftar" component={Daftar} options={{
-        tabBarLabelStyle : {fontSize : 12, width : 100},
+        tabBarLabelStyle : {fontSize : 12, width : 100 , fontFamily : "Mooli-Regular"},
         tabBarIcon : ({focused}) =>(
           <Animatable.View animation={focused ? 'bounce' : null}>
           <FontAwesomeIcon
             icon={faRectangleList}
-            size={focused ? 35 : 25}
-            color={focused ? '#419197' : '#12486B'}
-            style={focused ? {marginBottom : 20,} : {marginBottom : 0}}
+            size={focused ? 29 : 25}
+            color={focused ? '#2666CF' : '#1B262C'}
+            style={focused ? {marginBottom : 7,} : {marginBottom : 0}}
           />
         </Animatable.View>        
             )
@@ -78,3 +90,5 @@ export default function Index() {
     </Tab.Navigator>
   );
 }
+
+
