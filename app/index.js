@@ -24,14 +24,13 @@ export default function Index() {
   return (
     <Tab.Navigator 
     screenOptions={{
-
       tabBarStyle : {
         height : 55,
         paddingBottom : 7,
-        backgroundColor : "#FFFFFF",
         borderTopLeftRadius : 20,
         borderTopRightRadius : 20,
-        shadowColor : "#61677A",
+        marginLeft : 20,
+        marginRight : 20
       }
     }}
     >
