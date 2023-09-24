@@ -17,7 +17,7 @@ const Beranda = () => {
       }
 
     return(
-        <View style = {{padding : 5,}}>
+        <View style = {{padding : 5, backgroundColor : "#FFFBF5"}}>
             <ScrollView>
                 <Text style = {styles.Title}>Adoja, Simple Djikstra Location</Text>
                 <View style={styles.bannerContainer}>
