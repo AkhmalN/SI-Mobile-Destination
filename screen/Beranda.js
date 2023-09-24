@@ -3,10 +3,21 @@ import CardView from "../components/Card";
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-native-fontawesome";
 import { TouchableOpacity } from "react-native-gesture-handler";
+import { useFonts } from "expo-font";
+
 
 const Beranda = () => {
+
+    const [fontLoaded] = useFonts({
+        'Mooli-Regular' : require('../assets/fonts/Mooli-Regular.ttf')
+      })
+    
+      if(!fontLoaded){
+        return undefined
+      }
+
     return(
-        <View style = {{padding : 5}}>
+        <View style = {{padding : 5,}}>
             <ScrollView>
                 <Text style = {styles.Title}>Adoja, Simple Djikstra Location</Text>
                 <View style={styles.bannerContainer}>
@@ -53,10 +64,11 @@ const Beranda = () => {
 
 const styles = StyleSheet.create({
     Title : {
+        fontFamily : "Mooli-Regular",
         fontWeight : 'bold',
-        fontSize : 20,
+        fontSize : 25,
         marginTop : 5,
-        marginBottom : 10
+        marginBottom : 10,
     },
     bannerImage: {
         width: '100%', 

@@ -8,14 +8,13 @@ const CardView = () => {
     return(
         <TouchableOpacity>
             <View style = {styles.Card}>
-            <Image source={require('../assets/pantai.jpeg')}  style = {{width : 200, height : 180}}/>
-            <Text style = {styles.Typography}>Gunung Galunggung</Text>
-            <View style = {{flexDirection : 'row', alignItems : 'center'}}>
+            <Image source={require('../assets/dummy-card.jpg')}  style = {{width : 200, height : 260, borderRadius : 20}}/>
+            <Text style = {styles.Typography_title}>Gunung Galunggung</Text>
+            <View style = {styles.Typography_desc}>
                 <Text><FontAwesomeIcon icon={faLocationDot} style={styles.Icon}/></Text>
-                <Text  numberOfLines={1} ellipsizeMode="tail" style = {styles.Typography}>Linggawangi, Leuwisari, Tasikmalaya</Text>
+                <Text  numberOfLines={1} ellipsizeMode="tail" style = {{color : "#F1EFEF", marginLeft : 8}}>Linggawangi, Leuwisari, Tasikmalaya</Text>
             </View>
-            <View  style = {{flexDirection : 'row', alignItems : 'center'}}>
-                <Text>Rating: </Text>
+            <View  style = {styles.Typography_rating}>
                 <StarRating
                     rating={4}
                     starSize={20}
@@ -29,24 +28,45 @@ const CardView = () => {
 }
 const styles = StyleSheet.create({
     Card : {
-        borderRadius : 20,
-        width : 232,
+        width : 220,
         height : 280,
-        borderRadius: 8, // Radius sudut
-        padding: 16, // Padding dalam kartu
+        borderRadius: 20, // Radius sudut
+        padding: 10, // Padding dalam kartu
         margin: 2, // Margin antara kartu
         shadowColor: 'rgba(0, 0, 0, 0.2)', // Warna bayangan
-        shadowOffset: { width: 0, height: 2 }, // Offset bayangan
+        shadowOffset: { width: 0, height: 1 }, // Offset bayangan
         shadowOpacity: 0.8, // Opasitas bayangan
         elevation: 4, // Elevation (untuk platform Android)
     },
-    Typography : {
-        
+    Typography_title : {
+        position : "absolute",
+        width : '100%',
         marginTop : 2,
-        marginBottom : 2,
+        marginBottom : 5,
+        top : '72%',
+        color : "#F1EFEF",
+        left : "10%",
+        fontSize : 17
     }, 
+    Typography_desc : {
+        color : "#F1EFEF",
+        flexDirection : 'row', 
+        alignItems : 'center',
+        position : "absolute",
+        left : "10%",
+        top : '85%'
+    },
+    Typography_rating : {
+        width : "100%",
+        color : "#F1EFEF",
+        left : "10%",
+        position : "absolute",
+        top : "95%",
+    },
     Icon : {
-        color: "#2a86ea"
+        marginRight : 10,
+        color : "#F1EFEF",
+        fontSize : 8
     }
     
 
