@@ -20,16 +20,31 @@ app.get('/', (re, res)=> {
 
 
 app.get('/api/destination', (req, res)=>{
-   const query_sql = "SELECT * FROM destination_table"
-   db.query(query_sql, (err, data)=>{
-      if(err){ 
-         return res.json(err)
-      }
-      return res.json(data)
-   })
+
+   const {id} = req.query
+   if(id){
+      const query_sql = "SELECT * FROM destination_table WHERE place_id = ?"
+      db.query(query_sql, [id], (err, data)=>{
+         if(err){
+            return res.json(err)
+         }
+         else{
+            return res.json(data)
+         }
+      })
+   }else{
+
+      const query_sql = "SELECT * FROM destination_table"
+      db.query(query_sql, (err, data)=>{
+         if(err){ 
+            return res.json(err)
+         }
+         return res.json(data)
+      })
+   }
 })
 
 
-app.listen(8081, ()=>{
+app.listen(8083, ()=>{
    console.log('ready to listening')
 })
