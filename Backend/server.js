@@ -1,6 +1,9 @@
 const express = require('express')
 const mysql = require('mysql')
 const cors = require('cors')
+const dotenv = require('dotenv')
+
+dotenv.config() //load environtment from env
 
 
 const app = express()
@@ -13,6 +16,8 @@ const db = mysql.createConnection({
    password : "",
    database : "tourism_destination"
 })
+
+const PORT = process.env.PORT || 8083
 
 app.get('/', (re, res)=> {
    return res.json('From server side!')
@@ -45,8 +50,8 @@ app.get('/api/destination', (req, res)=>{
 })
 
 
-app.listen(8083, ()=>{
-   console.log('ready to listening')
+app.listen(PORT, ()=>{
+   console.log('Server is running on Port', PORT)
 })
 
 
