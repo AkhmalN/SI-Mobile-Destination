@@ -14,13 +14,6 @@ const CardView = () => {
                 <Text><FontAwesomeIcon icon={faLocationDot} style={styles.Icon}/></Text>
                 <Text  numberOfLines={1} ellipsizeMode="tail" style = {{color : "#F1EFEF", marginLeft : 8}}>Linggawangi, Leuwisari, Tasikmalaya</Text>
             </View>
-            <View  style = {styles.Typography_rating}>
-                <StarRating
-                    rating={4}
-                    starSize={20}
-                    starStyle = {{width : 5}}
-                />
-            </View>
         </View>
         </TouchableOpacity>
     )
@@ -43,7 +36,7 @@ const styles = StyleSheet.create({
         width : '100%',
         marginTop : 2,
         marginBottom : 5,
-        top : '72%',
+        top : '82%',
         color : "#F1EFEF",
         left : "10%",
         fontSize : 17
@@ -54,7 +47,7 @@ const styles = StyleSheet.create({
         alignItems : 'center',
         position : "absolute",
         left : "10%",
-        top : '85%'
+        top : '92%'
     },
     Typography_rating : {
         width : "100%",

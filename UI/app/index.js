@@ -8,7 +8,7 @@ import Daftar from '../screen/Daftar';
 import Pencarian from '../screen/Pencarian';
 import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome';
 import * as Animatable from 'react-native-animatable'
-import { faHouseChimneyWindow, faMagnifyingGlass, faMapLocation, faRectangleList } from '@fortawesome/free-solid-svg-icons';
+import { faHouseChimneyWindow, faL, faMagnifyingGlass, faMapLocation, faRectangleList } from '@fortawesome/free-solid-svg-icons';
 const Tab = createBottomTabNavigator();
 
 export default function Index() {
@@ -36,6 +36,7 @@ export default function Index() {
     }}
     >
       <Tab.Screen name="Beranda" component={Beranda} options={{
+        headerShown : false,
         tabBarLabelStyle : {fontSize : 12, width : 100, fontFamily : "Mooli-Regular"},
         tabBarIcon : ({focused}) =>(
             <Animatable.View animation={focused ? 'bounce' : null}>
@@ -49,6 +50,7 @@ export default function Index() {
                   )
             }}/>
       <Tab.Screen name="Lokasi" component={Lokasi}options={{
+        headerShown : false,
         tabBarLabelStyle : {fontSize : 12, width : 100 , fontFamily : "Mooli-Regular"},
         tabBarIcon : ({focused}) =>(
           <Animatable.View animation={focused ? 'bounce' : null}>
@@ -62,6 +64,7 @@ export default function Index() {
             )
       }}  />
       <Tab.Screen name="Pencarian" component={Pencarian} options={{
+        headerShown : false,
         tabBarLabelStyle : {fontSize : 12, width : 100 , fontFamily : "Mooli-Regular"},
         tabBarIcon : ({focused}) =>(
           <Animatable.View animation={focused ? 'bounce' : null}>
@@ -75,6 +78,7 @@ export default function Index() {
             )
       }}/>
       <Tab.Screen name="Daftar" component={Daftar} options={{
+        headerShown : false,
         tabBarLabelStyle : {fontSize : 12, width : 100 , fontFamily : "Mooli-Regular"},
         tabBarIcon : ({focused}) =>(
           <Animatable.View animation={focused ? 'bounce' : null}>

@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { View, Text, ScrollView } from 'react-native';
 import axios from 'axios';
 
-const apiUrl = 'http://10.40.4.167:8083/api/destination'; 
+const apiUrl = 'http://192.168.100.123:8083/api/destination'; 
 
 const Daftar = () => {
   const [data, setData] = useState([]);
