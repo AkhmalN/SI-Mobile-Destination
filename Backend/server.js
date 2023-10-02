@@ -1,57 +1,21 @@
 const express = require('express')
-const mysql = require('mysql')
-const cors = require('cors')
-const dotenv = require('dotenv')
-
-dotenv.config() //load environtment from env
-
-
+require('dotenv').config()
+const { default: mongoose } = require('mongoose')
 const app = express()
-app.use(cors())
 
-
-const db = mysql.createConnection({
-   host : "localhost",
-   user : "root",
-   password : "",
-   database : "tourism_destination"
-})
 
 const PORT = process.env.PORT || 8083
 
-app.get('/', (re, res)=> {
-   return res.json('From server side!')
-})
-
-
-app.get('/api/destination', (req, res)=>{
-
-   const {id} = req.query
-   if(id){
-      const query_sql = "SELECT * FROM destination_table WHERE place_id = ?"
-      db.query(query_sql, [id], (err, data)=>{
-         if(err){
-            return res.json(err)
-         }
-         else{
-            return res.json(data)
-         }
-      })
-   }else{
-
-      const query_sql = "SELECT * FROM destination_table"
-      db.query(query_sql, (err, data)=>{
-         if(err){ 
-            return res.json(err)
-         }
-         return res.json(data)
-      })
-   }
-})
+mongoose
+   .connect(process.env.MONGODB_URI)
+   .then(()=>{
+      console.log('Success connect to mongodb')
+   })
+   .catch((err)=>{
+      console.log('Cannot connect to mongodb : ',err)
+   })
 
 
 app.listen(PORT, ()=>{
-   console.log('Server is running on Port', PORT)
+   console.log('server running on port : ', PORT)
 })
-
-
